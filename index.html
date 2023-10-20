@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body>
+    <nav class="bg-white border-gray-200 dark:bg-gray-900">
+      <div
+        class="flex flex-wrap items-center justify-between max-w-screen-xl p-4 mx-auto"
+      >
+        <a href="https://flowbite.com/" class="flex items-center">
+          <img
+            src="https://flowbite.com/docs/images/logo.svg"
+            class="h-8 mr-3"
+            alt="Flowbite Logo"
+          />
+          <span
+            class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white"
+            >Flowbite</span
+          >
+        </a>
+        <div class="flex md:order-2">
+          <div class="flex items-center gap-4" id="createButton">
+            <a
+              href="./crud/create.html"
+              class="px-4 py-2 mr-3 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 md:mr-0 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+            >
+              Create Now
+            </a>
+            <span class="p-4 cursor-pointer" id="logOut">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke-width="1.5"
+                stroke="currentColor"
+                class="w-6 h-6"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M15.75 9V5.25A2.25 2.25 0 0013.5 3h-6a2.25 2.25 0 00-2.25 2.25v13.5A2.25 2.25 0 007.5 21h6a2.25 2.25 0 002.25-2.25V15m3 0l3-3m0 0l-3-3m3 3H9"
+                />
+              </svg>
+            </span>
+          </div>
+          <div id="authButtons" class="hidden">
+            <a
+              href="/sign-up.html"
+              id="signUpButton"
+              class="text-white bg-gradient-to-r from-purple-500 via-purple-600 to-purple-700 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-purple-300 dark:focus:ring-purple-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2"
+              >Sign Up</a
+            >
+            <a
+              href="sign-in.html"
+              id="signInButton"
+              class="text-blue-700 hover:text-white border border-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2 dark:border-blue-500 dark:text-blue-500 dark:hover:text-white dark:hover:bg-blue-500 dark:focus:ring-blue-800"
+              >Sign In</a
+            >
+          </div>
+          <button
+            data-collapse-toggle="navbar-cta"
+            type="button"
+            class="inline-flex items-center justify-center w-10 h-10 p-2 text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
+            aria-controls="navbar-cta"
+            aria-expanded="false"
+          >
+            <span class="sr-only">Open main menu</span>
+            <svg
+              class="w-5 h-5"
+              aria-hidden="true"
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 17 14"
+            >
+              <path
+                stroke="currentColor"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M1 1h15M1 7h15M1 13h15"
+              />
+            </svg>
+          </button>
+        </div>
+        <div
+          class="items-center justify-between hidden w-full md:flex md:w-auto md:order-1"
+          id="navbar-cta"
+        >
+          <ul
+            class="flex flex-col p-4 mt-4 font-medium border border-gray-100 rounded-lg md:p-0 bg-gray-50 md:flex-row md:space-x-8 md:mt-0 md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700"
+          >
+            <li>
+              <a
+                href="#"
+                class="block py-2 pl-3 pr-4 text-white bg-blue-700 rounded md:bg-transparent md:text-blue-700 md:p-0 md:dark:text-blue-500"
+                aria-current="page"
+                >Home</a
+              >
+            </li>
+            <li>
+              <a
+                href="#"
+                class="block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 md:dark:hover:text-blue-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700"
+                >About</a
+              >
+            </li>
+            <li>
+              <a
+                href="#"
+                class="block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 md:dark:hover:text-blue-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700"
+                >Services</a
+              >
+            </li>
+            <li>
+              <a
+                href="#"
+                class="block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 md:dark:hover:text-blue-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700"
+                >Contact</a
+              >
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <div
+      id="products-container"
+      class="grid max-w-screen-xl grid-cols-5 gap-5 p-4 mx-auto my-8"
+    >
+    <!-- <div class="w-[280px] p-2 bg-white rounded-lg shadow-lg">
+      <a href="#">
+        <img
+          class="rounded-t-lg object-fit"
+          src="../apple watch.avif"
+          alt="product image"
+        />
+      </a>
+      <div class="pt-5">
+        <a href="#">
+          <h5
+            class="text-xl font-semibold tracking-tight text-gray-900 dark:text-white"
+          >
+            name
+          </h5>
+        </a>
+        <div class="flex items-center mt-2.5 mb-5">
+          <span
+            class="bg-blue-100 text-blue-800 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded dark:bg-blue-200 dark:text-blue-800 ml-3"
+            >brand</span
+          >
+        </div>
+        <div class="flex items-center justify-between">
+          <span class="text-3xl font-bold text-gray-900 dark:text-white"
+            >price</span
+          >
+          <button
+            class="relative inline-flex items-center justify-center p-0.5 mb-2 mr-2 overflow-hidden text-sm font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-cyan-500 to-blue-500 group-hover:from-cyan-500 group-hover:to-blue-500 hover:text-white dark:text-white focus:ring-4 focus:outline-none focus:ring-cyan-200 dark:focus:ring-cyan-800"
+          >
+            <span
+              class="relative px-5 py-2.5 transition-all ease-in duration-75 bg-white dark:bg-gray-900 rounded-md group-hover:bg-opacity-0"
+            >
+              Add to cart
+            </span>
+          </button>
+        </div>
+        <div class="flex items-center justify-between">
+          <span class="text-[#1C64F2] p-4 cursor-pointer">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="1.5"
+              stroke="currentColor"
+              class="w-6 h-6"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M16.862 4.487l1.687-1.688a1.875 1.875 0 112.652 2.652L10.582 16.07a4.5 4.5 0 01-1.897 1.13L6 18l.8-2.685a4.5 4.5 0 011.13-1.897l8.932-8.931zm0 0L19.5 7.125M18 14v4.75A2.25 2.25 0 0115.75 21H5.25A2.25 2.25 0 013 18.75V8.25A2.25 2.25 0 015.25 6H10"
+              />
+            </svg>
+          </span>
+
+          <span class="text-[#E02424] p-4 cursor-pointer">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="1.5"
+              stroke="currentColor"
+              class="w-6 h-6"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M14.74 9l-.346 9m-4.788 0L9.26 9m9.968-3.21c.342.052.682.107 1.022.166m-1.022-.165L18.16 19.673a2.25 2.25 0 01-2.244 2.077H8.084a2.25 2.25 0 01-2.244-2.077L4.772 5.79m14.456 0a48.108 48.108 0 00-3.478-.397m-12 .562c.34-.059.68-.114 1.022-.165m0 0a48.11 48.11 0 013.478-.397m7.5 0v-.916c0-1.18-.91-2.164-2.09-2.201a51.964 51.964 0 00-3.32 0c-1.18.037-2.09 1.022-2.09 2.201v.916m7.5 0a48.667 48.667 0 00-7.5 0"
+              />
+            </svg>
+          </span>
+        </div>
+      </div>
+    </div> -->
+  </div>
+
+    <!-- Main modal -->
+    <div
+      id="authentication-modal"
+      tabindex="-1"
+      aria-hidden="true"
+      class="fixed top-0 left-0 right-0 z-50 flex items-center justify-center hidden w-full h-full"
+    >
+      <!-- -- Overlay-- -->
+      <div
+        id="overlay"
+        class="absolute top-0 bottom-0 left-0 right-0 bg-black bg-opacity-50 cursor-pointer"
+      ></div>
+      <div class="relative w-full max-w-md max-h-full">
+        <!-- Modal content -->
+        <div class="relative bg-white rounded-lg shadow dark:bg-gray-700">
+          <button
+            type="button"
+            class="absolute top-3 right-2.5 text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 ml-auto inline-flex justify-center items-center dark:hover:bg-gray-600 dark:hover:text-white"
+            data-modal-hide="authentication-modal"
+          >
+            <svg
+              class="w-3 h-3"
+              aria-hidden="true"
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 14 14"
+            >
+              <path
+                stroke="currentColor"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6"
+              />
+            </svg>
+            <span class="sr-only">Close modal</span>
+          </button>
+          <div class="px-6 py-6 lg:px-8">
+            <h3 class="mb-4 text-xl font-medium text-gray-900 dark:text-white">
+              Update Product
+            </h3>
+            <form id="formUpdate">
+              <input type="hidden" id="postId" />
+              <div class="grid gap-4 sm:grid-cols-2 sm:gap-6">
+                <div class="sm:col-span-2">
+                  <label
+                    for="name"
+                    class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                    >Product Name</label
+                  >
+                  <input
+                    type="text"
+                    name="name"
+                    id="name"
+                    class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
+                    placeholder="Type product name"
+                    required=""
+                  />
+                </div>
+                <div class="w-full">
+                  <label
+                    for="brand"
+                    class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                    >Brand</label
+                  >
+                  <input
+                    type="text"
+                    name="brand"
+                    id="brand"
+                    class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
+                    placeholder="Product brand"
+                    required=""
+                  />
+                </div>
+                <div class="w-full">
+                  <label
+                    for="price"
+                    class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                    >Price</label
+                  >
+                  <input
+                    type="number"
+                    name="price"
+                    id="price"
+                    class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
+                    placeholder="$2999"
+                    required=""
+                  />
+                </div>
+
+                <div class="sm:col-span-2">
+                  <label
+                    for="item-weight"
+                    class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                    >Item Weight (kg)</label
+                  >
+                  <input
+                    type="number"
+                    name="item-weight"
+                    id="item-weight"
+                    class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
+                    placeholder="12"
+                    required=""
+                  />
+                </div>
+                <div class="sm:col-span-2">
+                  <label
+                    for="description"
+                    class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                    >Description</label
+                  >
+                  <textarea
+                    id="description"
+                    rows="8"
+                    class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-primary-500 focus:border-primary-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
+                    placeholder="Your description here"
+                  ></textarea>
+                </div>
+              </div>
+              <div class="flex items-center justify-center mt-6">
+                <button
+                  type="submit"
+                  class="text-gray-900 bg-gradient-to-r from-lime-200 via-lime-400 to-lime-500 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-lime-300 dark:focus:ring-lime-800 shadow-lg shadow-lime-500/50 dark:shadow-lg dark:shadow-lime-800/80 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2"
+                >
+                  + Update
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.4.0/axios.min.js"
+      integrity="sha512-uMtXmF28A2Ab/JJO2t/vYhlaa/3ahUOgj1Zf27M5rOo8/+fcTUVH0/E0ll68njmjrLqOBjXM3V9NiPFL5ywWPQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script type="module" src="./app.js"></script>
+  </body>
+</html>

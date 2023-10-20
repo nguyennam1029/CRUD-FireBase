@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sign In</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body>
+    <div class="flex items-center justify-center h-screen">
+      <form id="form-sign-in" class="w-full max-w-lg p-10 rounded-lg shadow-lg">
+        <h1 class="mb-5 text-2xl text-center text-blue-500">Sign In</h1>
+        <div class="mb-6">
+          <label
+            for="email"
+            class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+            >Your email</label
+          >
+          <input
+            type="email"
+            id="email"
+            class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+            placeholder="name@flowbite.com"
+            required
+          />
+        </div>
+        <div class="mb-6">
+          <label
+            for="password"
+            class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+            >Your password</label
+          >
+          <input
+            type="password"
+            id="password"
+            class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+            required
+          />
+        </div>
+
+        <div class="flex items-center justify-center">
+          <button
+            type="submit"
+            class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+          >
+            Submit
+          </button>
+        </div>
+        <div class="mt-9">
+          Don’t have an account?
+          <a href="/sign-up.html" class="text-blue-700"> Sign Up </a>
+        </div>
+      </form>
+    </div>
+
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.4.0/axios.min.js"
+      integrity="sha512-uMtXmF28A2Ab/JJO2t/vYhlaa/3ahUOgj1Zf27M5rOo8/+fcTUVH0/E0ll68njmjrLqOBjXM3V9NiPFL5ywWPQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script type="module">
+      import { auth, signInWithEmailAndPassword } from "./fireBase-auth.js";
+
+      const userForm = document.getElementById("form-sign-in");
+      userForm.addEventListener("submit", signUpForm);
+      function signUpForm(e) {
+        e.preventDefault();
+        const email = userForm.email.value;
+        const password = userForm.password.value;
+        signInWithEmailAndPassword(auth, email, password)
+          .then((userCredential) => {
+            // Signed in
+            const user = userCredential.user;
+
+            alert("Đăng nhập thành công");
+            window.location.assign("./index.html");
+            // ...
+          })
+          .catch((error) => {
+            const errorCode = error.code;
+            const errorMessage = error.message;
+            alert(errorMessage);
+
+            // ..
+          });
+      }
+    </script>
+  </body>
+</html>
